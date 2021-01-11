@@ -1,0 +1,41 @@
+.header {
+  color: white;
+  height: 75px;
+  background-color: gray;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.header_actions > a {
+  cursor: pointer;
+  color: #fff;
+  outline: none;
+  border: none;
+  font-weight: 700;
+  border-radius: 0.3vw;
+  padding: 0.5rem 2rem;
+  /* margin-right: 1rem; */
+  background-color: rgba(51, 51, 51, 0.5);
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.header_actions > a > span {
+  margin-right: 0.5rem;
+}
+
+.header_actions > a:hover {
+  color: #000;
+  background-color: #e6e6e6;
+  transition: all 0.3s;
+}
+
+.header_actions > a:visited {
+  text-decoration: none;
+}
+
+.header_actions > a.active {
+  border-bottom: 2px solid #e6e6e6;
+}
