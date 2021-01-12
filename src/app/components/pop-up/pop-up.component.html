@@ -1,0 +1,12 @@
+<div
+  [@popUpState]
+  class="popup {{ item.type }}"
+  [ngStyle]="{ 'top.px': (index + 1) * 70 + 35 }"
+>
+  <div class="popup_message">
+    {{ item.message }}
+  </div>
+  <div class="popup_actions">
+    <button (click)="remove()"><strong>X</strong></button>
+  </div>
+</div>
