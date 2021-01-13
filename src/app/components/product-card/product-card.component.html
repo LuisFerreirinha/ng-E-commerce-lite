@@ -1,0 +1,18 @@
+<div class="card">
+  <div class="card_image">
+    <img src="https://cdn.vuetifyjs.com/images/cards/cooking.png" />
+  </div>
+  <div class="card_body">
+    <h2>{{ product.name }}</h2>
+    <p>Ref: {{ product.id }}</p>
+    <h3>
+      <strong> {{ product.price }}€</strong>
+    </h3>
+  </div>
+  <div class="card_actions">
+    <button (click)="buy()" [ngClass]="{ clicked: spinner }">
+      <span *ngIf="!spinner"><i class="fa fa-shopping-cart"></i>Buy</span>
+      <span *ngIf="spinner"><app-spinner></app-spinner></span>
+    </button>
+  </div>
+</div>

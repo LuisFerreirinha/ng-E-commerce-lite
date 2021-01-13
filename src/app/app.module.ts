@@ -10,6 +10,8 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PopUpComponent } from './components/pop-up/pop-up.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProductCardComponent } from './components/product-card/product-card.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'shopping-cart', component: ShoppingCartComponent },
@@ -23,6 +25,8 @@ const appRoutes: Routes = [
     ShoppingCartComponent,
     FooterComponent,
     PopUpComponent,
+    ProductCardComponent,
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule,
