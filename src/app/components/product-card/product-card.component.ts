@@ -1,7 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { IpopUp } from 'src/app/Models/IPopUp';
 import { IProduct } from 'src/app/Models/IProducts';
+import { Product } from 'src/app/Models/product';
 import { PopUpService } from 'src/app/_services/pop-up.service';
+
+import * as shoppingCartActions from '../../_store/_actions/shopping-cart.actions';
 
 @Component({
   selector: 'app-product-card',
@@ -12,7 +16,10 @@ export class ProductCardComponent implements OnInit {
   spinner = false;
   timer = null;
   @Input() product: IProduct;
-  constructor(private popupService: PopUpService) {}
+  constructor(
+    private popupService: PopUpService,
+    private store: Store<{ shoppingCart: { shoppingCartProducts: Product[] } }>
+  ) {}
 
   ngOnInit() {}
 
@@ -21,12 +28,17 @@ export class ProductCardComponent implements OnInit {
       this.spinner = true;
       // this.productService.sendProduct(this.product);
       this.timer = setTimeout(() => {
+        const _product = new Product(this.product);
+        this.store.dispatch(
+          new shoppingCartActions.AddShoppingCartProduct(_product)
+        );
+
         const popup: IpopUp = {
           message: `Product ${this.product.id} added!`,
           timer: 3,
           type: 'success',
         };
-        this.popupService.addPopup(popup);
+
         this.spinner = false;
         this.timer = null;
       }, 1000);

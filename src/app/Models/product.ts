@@ -1,6 +1,6 @@
 import { IProduct } from './IProducts';
 
-export class CProduct {
+export class Product {
   qtt: number = 0;
   total: number = 0;
 
