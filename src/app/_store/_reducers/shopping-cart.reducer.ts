@@ -20,10 +20,36 @@ export function shoppingCartReducer(
 ) {
   switch (action.type) {
     case ShoppingCartActions.ADD_SHOPPING_CART_PRODUCT:
-      return {
-        ...state,
-        shoppingCartProducts: [...state.shoppingCartProducts, action.payload],
-      };
+      let _newProduct = action.payload;
+
+      const _filteredProducts = state.shoppingCartProducts.filter((p) => {
+        return p.product.id == _newProduct.product.id;
+      });
+
+      if (_filteredProducts.length > 0) {
+        //Product already added
+
+        const updatedProducts = [...state.shoppingCartProducts].map((p) => {
+          if (p.product.id == _newProduct.product.id) {
+            return (p = {
+              ..._newProduct,
+              qtt: _newProduct.qtt + 1,
+              total: _newProduct.total + _newProduct.product.price,
+            });
+          } else {
+            return p;
+          }
+        });
+        return {
+          ...state,
+          shoppingCartProducts: updatedProducts,
+        };
+      } else {
+        return {
+          ...state,
+          shoppingCartProducts: [...state.shoppingCartProducts, _newProduct],
+        };
+      }
 
     case ShoppingCartActions.UPDATE_SHOPPING_CART_PRODUCT:
       const product = state.shoppingCartProducts[action.payload.index];
