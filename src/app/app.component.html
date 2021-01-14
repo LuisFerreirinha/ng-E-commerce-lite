@@ -5,19 +5,12 @@
     <!-- Routes -->
     <router-outlet></router-outlet>
 
-    <button (click)="addPopUp()">Teste</button>
     <!-- PopUp -->
     <app-pop-up
       *ngFor="let popup of popUps; index as i"
       [item]="popup"
       [index]="i"
     ></app-pop-up>
-    <!-- <app-pop-up
-      message="This is the poup message. This is the poup message"
-      type="success"
-      index="1"
-      timer="3"
-    ></app-pop-up> -->
   </div>
 </div>
 <!-- footer -->

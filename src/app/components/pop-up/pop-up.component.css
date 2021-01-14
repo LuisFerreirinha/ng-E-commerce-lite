@@ -6,8 +6,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-width: 300px;
-  max-width: 350px;
+  min-width: 200px;
+  max-width: 250px;
 
   position: fixed;
   top: 120px;
@@ -48,4 +48,36 @@
 .popup_actions > button:hover {
   transform: scale(1.2);
   transition: 0.3s ease;
+}
+
+@media only screen and (min-width: 576px) {
+  .popup {
+    right: 40px;
+    min-width: 300px;
+    max-width: 350px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .popup {
+    right: 60px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .popup {
+    right: 70px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .popup {
+    right: 80px;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .popup {
+    right: 90px;
+  }
 }

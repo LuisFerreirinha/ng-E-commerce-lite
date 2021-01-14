@@ -38,13 +38,4 @@ export class AppComponent implements OnInit, OnDestroy {
   removePopUp(index: number) {
     this.popUps.splice(index, 1);
   }
-
-  addPopUp() {
-    const _popUp: IpopUp = {
-      message: `Item ${this.popUps.length + 1} adicionado ao carrinho!`,
-      type: 'info',
-      timer: 5,
-    };
-    this.popUpService.addPopup(_popUp);
-  }
 }

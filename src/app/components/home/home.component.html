@@ -1,15 +1,22 @@
-<p>home works!</p>
-<div class="container">
-  <app-product-card
-    [product]="{ name: 'Product 1', price: 125, id: 1, image: '' }"
-  ></app-product-card>
-  <app-product-card
-    [product]="{ name: 'Product 2', price: 45, id: 2, image: '' }"
-  ></app-product-card>
-  <app-product-card
-    [product]="{ name: 'Product 3', price: 23, id: 3, image: '' }"
-  ></app-product-card>
-  <app-product-card
-    [product]="{ name: 'Product 4', price: 56, id: 4, image: '' }"
-  ></app-product-card>
+<div class="home">
+  <div class="home_header">
+    <h1>Most wanted</h1>
+    <hr />
+  </div>
+  <div class="home_body">
+    <div class="container">
+      <app-product-card
+        [product]="{ name: 'Product 1', price: 125, id: 1, image: '' }"
+      ></app-product-card>
+      <app-product-card
+        [product]="{ name: 'Product 2', price: 45, id: 2, image: '' }"
+      ></app-product-card>
+      <app-product-card
+        [product]="{ name: 'Product 3', price: 23, id: 3, image: '' }"
+      ></app-product-card>
+      <app-product-card
+        [product]="{ name: 'Product 4', price: 56, id: 4, image: '' }"
+      ></app-product-card>
+    </div>
+  </div>
 </div>
