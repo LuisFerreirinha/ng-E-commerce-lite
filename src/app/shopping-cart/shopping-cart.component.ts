@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Product } from '../Models/product';
+import * as fromShoppingCart from '../_store/_reducers/shopping-cart.reducer';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -10,9 +11,7 @@ import { Product } from '../Models/product';
 })
 export class ShoppingCartComponent implements OnInit {
   products: Observable<{ shoppingCartProducts: Product[] }>;
-  constructor(
-    private store: Store<{ shoppingCart: { shoppingCartProducts: Product[] } }>
-  ) {}
+  constructor(private store: Store<fromShoppingCart.AppState>) {}
 
   ngOnInit(): void {
     this.products = this.store.select('shoppingCart');

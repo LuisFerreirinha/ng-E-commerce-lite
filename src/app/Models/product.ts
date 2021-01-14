@@ -6,15 +6,16 @@ export class Product {
 
   constructor(public product: IProduct) {
     this.qtt++;
-    this.Total();
-  }
-
-  Total() {
     this.total = this.qtt * this.product.price;
+    // this.Total();
   }
 
-  addItem() {
-    this.qtt++;
-    this.Total();
-  }
+  // Total() {
+  //   this.total = this.qtt * this.product.price;
+  // }
+
+  // addItem() {
+  //   this.qtt++;
+  //   this.Total();
+  // }
 }

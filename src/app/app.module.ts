@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -14,6 +15,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { shoppingCartReducer } from './_store/_reducers/shopping-cart.reducer';
+import { ProductListComponent } from './components/product-list/product-list.component';
+import { environment } from 'src/environments/environment';
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'shopping-cart', component: ShoppingCartComponent },
@@ -29,12 +32,14 @@ const appRoutes: Routes = [
     PopUpComponent,
     ProductCardComponent,
     SpinnerComponent,
+    ProductListComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
     StoreModule.forRoot({ shoppingCart: shoppingCartReducer }),
+    StoreDevtoolsModule.instrument({ logOnly: environment.production }),
     RouterModule.forRoot(appRoutes),
   ],
   providers: [],

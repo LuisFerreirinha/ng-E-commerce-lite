@@ -1,11 +1,5 @@
-<p>shopping-cart works!</p>
-
-<app-product-card
+<app-product-list
   *ngFor="let product of (products | async).shoppingCartProducts; let i = index"
-  [product]="{
-    name: product.product.name,
-    price: product.product.price,
-    id: product.product.id,
-    image: ''
-  }"
-></app-product-card>
+  [product]="product"
+  [index]="i"
+></app-product-list>
