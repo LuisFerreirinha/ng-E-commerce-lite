@@ -1,0 +1,125 @@
+.shopping_cart {
+  padding: 15px;
+  /* box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+      0 1px 5px 0 rgba(0, 0, 0, 0.12); */
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 0.3rem;
+  /* width: 90%; */
+  margin: 20px auto;
+}
+
+.shopping_cart_header {
+  /* width: 60%; */
+  margin: 0 auto;
+  padding-bottom: 5px;
+}
+
+.shopping_cart_header > h1 {
+  font-weight: 500;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+}
+
+.container {
+  /* width: 60%; */
+  padding: 15px;
+}
+
+.shopping_cart_table {
+  width: 100%;
+  margin-top: 20px;
+  border: 0;
+  border-collapse: separate;
+  border-spacing: 0 5px;
+}
+
+th {
+  font-size: 1.2rem;
+  font-weight: 600;
+  /* border-bottom: 1px solid lightgray; */
+  padding: 0 0 20px 0;
+}
+
+tr {
+  text-align: center;
+}
+
+tr > td {
+  padding: 20px;
+  border-top: 1px solid lightgray;
+}
+
+tr > td:first-child {
+  width: 150px;
+}
+
+tr > td:first-child > img {
+  max-width: 150px;
+  object-fit: cover;
+}
+
+.col_description > p:first-child {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.col_description > p:last-child {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.shopping_cart_table_col_price {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.col_qtt_actions {
+  height: 40px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 120px;
+  margin: 0 auto;
+}
+
+.col_qtt_actions span {
+  flex-grow: 2;
+  flex-basis: 50%;
+}
+
+.col_qtt_actions button {
+  width: 38px;
+  height: 100%;
+  border: 1px solid transparent;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  transition: 0.3s ease-in;
+}
+
+.col_qtt_actions button:hover {
+  background-color: orange;
+  color: white;
+}
+
+.shopping_cart_table_col_total {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #f9a826;
+}
+
+.col_row_actions span {
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.col_row_actions span:hover > i {
+  color: #f9a826;
+  transform: scale(1.2);
+  transition: 0.3s linear;
+}
