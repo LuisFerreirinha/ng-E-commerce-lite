@@ -69,9 +69,14 @@
 
   .header_actions {
     margin-top: 25px;
+    text-align: center;
   }
   .header_actions > a {
     padding: 0.8rem 1.3rem;
+  }
+
+  .header_actions > a i {
+    display: none;
   }
 }
 

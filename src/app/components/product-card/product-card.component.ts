@@ -35,7 +35,7 @@ export class ProductCardComponent implements OnInit {
           new shoppingCartActions.AddShoppingCartProduct(_product)
         );
         const popup: IpopUp = {
-          message: `Product ${this.product.id} added!`,
+          message: `Product ref: ${this.product.id} added!`,
           timer: 3,
           type: 'success',
         };

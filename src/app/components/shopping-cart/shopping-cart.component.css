@@ -52,6 +52,11 @@
   width: 100%;
   object-fit: contain;
 }
+@media screen and (max-width: 992px) {
+  .shopping_cart {
+    padding: 5px;
+  }
+}
 
 /* .shopping_cart_table {
   width: 100%;
