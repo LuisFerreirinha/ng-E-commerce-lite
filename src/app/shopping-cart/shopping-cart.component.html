@@ -13,7 +13,10 @@
         <a routerLink="/">Buy the most wanted products now!</a>
         <img src="../../assets/undraw_empty_cart_co35.png" alt="Empty cart" />
       </div>
-      <table
+      <app-shopping-cart-table
+        *ngIf="(products | async).shoppingCartProducts.length != 0"
+      ></app-shopping-cart-table>
+      <!-- <table
         class="shopping_cart_table"
         *ngIf="(products | async).shoppingCartProducts.length != 0"
       >
@@ -25,16 +28,17 @@
           <th>Total</th>
           <th></th>
         </thead>
-        <tbody>
-          <tr
+        <tbody> -->
+      <!-- <tr
             app-shopping-cart-product-row
             *ngFor="
               let product of (products | async).shoppingCartProducts;
               let i = index
             "
             [product]="product"
-          ></tr>
-          <!-- <tr
+            [index]="i"
+          ></tr> -->
+      <!-- <tr
             class="shopping_cart_table_row_item"
             *ngFor="
               let product of (products | async).shoppingCartProducts;
@@ -76,9 +80,9 @@
                 <span (click)="deleteItem(i)"><i class="fa fa-trash"></i></span>
               </div>
             </td>
-          </tr> -->
+          </tr>
         </tbody>
-      </table>
+      </table> -->
     </div>
   </div>
 </div>

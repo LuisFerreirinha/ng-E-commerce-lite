@@ -17,6 +17,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
 import { shoppingCartReducer } from './_store/_reducers/shopping-cart.reducer';
 import { environment } from 'src/environments/environment';
 import { ShoppingCartProductRowComponent } from './shopping-cart-product-row/shopping-cart-product-row.component';
+import { ShoppingCartTableComponent } from './shopping-cart-table/shopping-cart-table.component';
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'shopping-cart', component: ShoppingCartComponent },
@@ -33,6 +34,7 @@ const appRoutes: Routes = [
     ProductCardComponent,
     SpinnerComponent,
     ShoppingCartProductRowComponent,
+    ShoppingCartTableComponent,
   ],
   imports: [
     BrowserModule,

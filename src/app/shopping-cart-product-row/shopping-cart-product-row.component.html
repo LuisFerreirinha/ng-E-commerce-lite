@@ -20,9 +20,9 @@
 </td>
 <td class="shopping_cart_table_col_qtt">
   <div class="col_qtt_actions">
-    <button>-</button>
+    <button (click)="removeItem()">-</button>
     <span>{{ product.qtt }}</span>
-    <button>+</button>
+    <button (click)="addItem()">+</button>
   </div>
 </td>
 <td class="shopping_cart_table_col_total">
@@ -30,6 +30,6 @@
 </td>
 <td>
   <div class="col_row_actions">
-    <span><i class="fa fa-trash"></i></span>
+    <span (click)="deleteItem()"><i class="fa fa-trash"></i></span>
   </div>
 </td>
