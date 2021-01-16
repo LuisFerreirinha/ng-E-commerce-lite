@@ -110,6 +110,10 @@ export function shoppingCartReducer(
         ...state,
         ...action.payload,
       };
+    case ShoppingCartActions.CHECKOUT_SHOPPING_CART_PRODUCT:
+      return {
+        ...initialState,
+      };
     default:
       return state;
   }

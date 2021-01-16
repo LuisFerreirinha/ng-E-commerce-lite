@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { IpopUp } from 'src/app/Models/IPopUp';
 import { PopUpService } from 'src/app/_services/pop-up.service';
 import * as fromShoppingCart from '../../_store/_reducers/shopping-cart.reducer';
+import * as ShoppingCartActions from '../../_store/_actions/shopping-cart.actions';
 @Component({
   selector: 'app-shopping-cart-summary',
   templateUrl: './shopping-cart-summary.component.html',
@@ -30,6 +31,7 @@ export class ShoppingCartSummaryComponent implements OnInit, OnDestroy {
   }
 
   chekout() {
+    this.store.dispatch(new ShoppingCartActions.CheckoutShoppingCart());
     const popup: IpopUp = {
       message: `Thank you for shopping with us!`,
       timer: 3,

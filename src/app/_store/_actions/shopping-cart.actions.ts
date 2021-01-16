@@ -6,6 +6,7 @@ export const LOAD_SHOPPING_CART_PRODUCTS = 'LOAD_SHOPPING_CART_PRODUCTS';
 export const ADD_SHOPPING_CART_PRODUCT = 'ADD_SHOPPING_CART_PRODUCT';
 export const UPDATE_SHOPPING_CART_PRODUCT = 'UPDATE_SHOPPING_CART_PRODUCT';
 export const DELETE_SHOPPING_CART_PRODUCT = 'DELETE_SHOPPING_CART_PRODUCT';
+export const CHECKOUT_SHOPPING_CART_PRODUCT = 'CHECKOUT_SHOPPING_CART_PRODUCT';
 
 export class AddShoppingCartProduct implements Action {
   readonly type = ADD_SHOPPING_CART_PRODUCT;
@@ -33,8 +34,13 @@ export class LoadShoppingCartProducts implements Action {
   constructor(public payload: State) {}
 }
 
+export class CheckoutShoppingCart implements Action {
+  readonly type = CHECKOUT_SHOPPING_CART_PRODUCT;
+}
+
 export type ShoppingCartActions =
   | AddShoppingCartProduct
   | UpdateShoppingCartProduct
   | DeleteShoppingCartProduct
-  | LoadShoppingCartProducts;
+  | LoadShoppingCartProducts
+  | CheckoutShoppingCart;
