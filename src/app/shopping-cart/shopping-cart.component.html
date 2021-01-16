@@ -5,7 +5,10 @@
   </div>
   <div class="shopping_cart_body">
     <div class="container">
-      <table class="shopping_cart_table">
+      <table
+        class="shopping_cart_table"
+        *ngIf="(products | async).shoppingCartProducts.length != 0"
+      >
         <thead>
           <th>Item</th>
           <th>Description</th>
