@@ -3,4 +3,11 @@
     <h1>Summary</h1>
     <hr />
   </div>
+  <div class="summary_body">
+    <span>{{ totalItems }} {{ totalItems == 1 ? "Product" : "Products" }}</span>
+    <span>{{ total | currency }}</span>
+  </div>
+  <div class="summary_actions">
+    <button type="button" (click)="chekout()">Checkout</button>
+  </div>
 </div>

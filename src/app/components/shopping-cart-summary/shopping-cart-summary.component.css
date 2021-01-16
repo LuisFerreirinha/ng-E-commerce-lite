@@ -12,3 +12,40 @@
   font-size: 1.6rem;
   text-transform: uppercase;
 }
+
+.summary_body {
+  padding: 20px 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  font-size: 1.3rem;
+}
+
+.summary_body span:last-child {
+  justify-self: end;
+  color: #f9a826;
+  font-weight: 500;
+}
+
+.summary_actions {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.summary_actions button {
+  cursor: pointer;
+  color: #f9a826;
+  outline: none;
+  font-weight: 700;
+  border-radius: 5px;
+  padding: 0.8rem 2rem;
+  border: 1px solid #f9a826;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.summary_actions button:hover {
+  background-color: #f9a826;
+  color: white;
+  transition: all 0.3s;
+}
