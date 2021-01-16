@@ -32,9 +32,9 @@ export function shoppingCartReducer(
         const updatedProducts = [...state.shoppingCartProducts].map((p) => {
           if (p.product.id == _newProduct.product.id) {
             return (p = {
-              ..._newProduct,
-              qtt: _newProduct.qtt + 1,
-              total: _newProduct.total + _newProduct.product.price,
+              ...p,
+              qtt: p.qtt + 1,
+              total: p.total + p.product.price,
             });
           } else {
             return p;
