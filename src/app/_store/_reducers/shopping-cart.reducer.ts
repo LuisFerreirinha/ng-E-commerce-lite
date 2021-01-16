@@ -34,7 +34,7 @@ export function shoppingCartReducer(
             return (p = {
               ...p,
               qtt: p.qtt + 1,
-              total: p.total + p.product.price,
+              total: p.total + +p.product.price,
             });
           } else {
             return p;
