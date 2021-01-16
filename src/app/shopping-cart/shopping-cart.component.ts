@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { Product } from '../Models/product';
 import * as fromShoppingCart from '../_store/_reducers/shopping-cart.reducer';
 import * as shoppingCartActions from '../_store/_actions/shopping-cart.actions';
-import { flatten } from '@angular/compiler';
 @Component({
   selector: 'app-shopping-cart',
   templateUrl: './shopping-cart.component.html',
