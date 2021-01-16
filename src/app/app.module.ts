@@ -15,7 +15,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { shoppingCartReducer } from './_store/_reducers/shopping-cart.reducer';
-import { ProductListComponent } from './components/product-list/product-list.component';
 import { environment } from 'src/environments/environment';
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -32,7 +31,6 @@ const appRoutes: Routes = [
     PopUpComponent,
     ProductCardComponent,
     SpinnerComponent,
-    ProductListComponent,
   ],
   imports: [
     BrowserModule,
