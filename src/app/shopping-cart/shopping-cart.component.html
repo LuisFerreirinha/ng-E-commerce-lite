@@ -26,9 +26,14 @@
             "
           >
             <td class="shopping_cart_table_col_img">
+              <div *ngIf="loadingImg">
+                <app-spinner></app-spinner>
+              </div>
               <img
-                src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
-                alt="[product.product.name]"
+                [hidden]="loadingImg"
+                [src]="product.product.photo"
+                [alt]="[product.product.name]"
+                (load)="loadingImg = false"
               />
             </td>
             <td class="shopping_cart_table_col_description">
@@ -38,7 +43,7 @@
               </div>
             </td>
             <td class="shopping_cart_table_col_price">
-              <span>{{ product.product.price }} €</span>
+              <span>{{ product.product.price | currency }}</span>
             </td>
             <td class="shopping_cart_table_col_qtt">
               <div class="col_qtt_actions">
@@ -47,7 +52,9 @@
                 <button (click)="addItem(i, product)">+</button>
               </div>
             </td>
-            <td class="shopping_cart_table_col_total">{{ product.total }} €</td>
+            <td class="shopping_cart_table_col_total">
+              {{ product.total | currency }}
+            </td>
             <td>
               <div class="col_row_actions">
                 <span (click)="deleteItem(i)"><i class="fa fa-trash"></i></span>

@@ -3,8 +3,8 @@
   position: relative;
   width: 1.5rem;
   height: 1.5rem;
-  border: 1px solide black;
 }
+
 .lds-ring div {
   box-sizing: border-box;
   display: block;
@@ -12,10 +12,10 @@
   width: 1.5rem;
   height: 1.5rem;
   margin: 5px 0;
-  border: 4px solid white;
+  border: 4px solid lightgray;
+  border-color: lightgray transparent transparent transparent;
   border-radius: 50%;
   animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: white transparent transparent transparent;
 }
 .lds-ring div:nth-child(1) {
   animation-delay: -0.45s;

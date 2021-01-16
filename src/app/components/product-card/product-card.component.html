@@ -1,11 +1,20 @@
 <div class="card">
   <div class="card_image">
-    <img src="https://cdn.vuetifyjs.com/images/cards/cooking.png" />
+    <!-- <img src="https://cdn.vuetifyjs.com/images/cards/cooking.png" /> -->
+    <div *ngIf="loadingImg" class="card_image_loading">
+      <app-spinner></app-spinner>
+    </div>
+    <img
+      [hidden]="loadingImg"
+      [src]="product.photo"
+      [alt]="product.name"
+      (load)="loadingImg = false"
+    />
   </div>
   <div class="card_body">
     <h2>{{ product.name }}</h2>
     <p>Ref: {{ product.id }}</p>
-    <h3>{{ product.price }}€</h3>
+    <h3>{{ product.price | currency }}</h3>
   </div>
   <div class="card_actions">
     <button (click)="buy()" [ngClass]="{ clicked: spinner }">

@@ -14,6 +14,7 @@ import * as shoppingCartActions from '../../_store/_actions/shopping-cart.action
   styleUrls: ['./product-card.component.css'],
 })
 export class ProductCardComponent implements OnInit {
+  loadingImg = true;
   spinner = false;
   timer = null;
   @Input() product: IProduct;
