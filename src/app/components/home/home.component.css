@@ -29,6 +29,7 @@
   display: grid;
   align-items: center;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-gap: 15px;
 }
 
 @media screen and (max-width: 576px) {

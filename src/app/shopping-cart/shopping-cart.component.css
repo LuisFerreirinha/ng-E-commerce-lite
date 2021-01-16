@@ -124,6 +124,24 @@ tr > td:first-child > img {
   transition: 0.3s linear;
 }
 
+@media screen and (max-width: 992px) {
+  .col_description > p:first-child {
+    font-size: 0.95rem;
+  }
+
+  .shopping_cart_table_col_price {
+    font-size: 1.1rem;
+    font-weight: 400;
+  }
+
+  tr > td:first-child {
+    width: 100px;
+  }
+  tr > td:first-child > img {
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .container {
     padding: 0;
@@ -158,12 +176,6 @@ tr > td:first-child > img {
     grid-row-start: 1;
     grid-row-end: 3;
     justify-self: center;
-  }
-  tr > td:first-child {
-    width: 100px;
-  }
-  tr > td:first-child > img {
-    width: 100%;
   }
 
   .shopping_cart_table_col_description {
