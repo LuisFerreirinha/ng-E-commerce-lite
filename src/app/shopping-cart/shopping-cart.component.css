@@ -27,6 +27,32 @@
   padding: 5px;
 }
 
+.shopping_cart_body_empty {
+  width: 50%;
+  margin: 0 auto;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.shopping_cart_body_empty h1 {
+  font-weight: 500;
+  color: #f9a826;
+  margin-bottom: 10px;
+}
+.shopping_cart_body_empty a {
+  color: black;
+  text-decoration: none;
+}
+
+.shopping_cart_body_empty a:hover {
+  text-decoration: underline;
+}
+
+.shopping_cart_body_empty img {
+  width: 100%;
+  object-fit: contain;
+}
+
 .shopping_cart_table {
   width: 100%;
   margin-top: 20px;

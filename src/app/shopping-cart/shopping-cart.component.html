@@ -5,6 +5,14 @@
   </div>
   <div class="shopping_cart_body">
     <div class="container">
+      <div
+        *ngIf="(products | async).shoppingCartProducts.length == 0"
+        class="shopping_cart_body_empty"
+      >
+        <h1>Your cart is empty</h1>
+        <a routerLink="/">Buy the most wanted products now!</a>
+        <img src="../../assets/undraw_empty_cart_co35.png" alt="Empty cart" />
+      </div>
       <table
         class="shopping_cart_table"
         *ngIf="(products | async).shoppingCartProducts.length != 0"
