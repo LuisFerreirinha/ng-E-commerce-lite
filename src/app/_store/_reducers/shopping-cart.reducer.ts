@@ -3,6 +3,7 @@ import * as ShoppingCartActions from '../_actions/shopping-cart.actions';
 
 export interface State {
   shoppingCartProducts: Product[];
+  TotalItems: number;
   Total: number;
 }
 export interface AppState {
@@ -11,6 +12,7 @@ export interface AppState {
 
 const initialState: State = {
   shoppingCartProducts: [],
+  TotalItems: 0,
   Total: 0,
 };
 
@@ -43,27 +45,37 @@ export function shoppingCartReducer(
         return {
           ...state,
           shoppingCartProducts: updatedProducts,
+          TotalItems: state.TotalItems + 1,
+          Total: state.Total + +_newProduct.product.price,
         };
       } else {
         return {
           ...state,
           shoppingCartProducts: [...state.shoppingCartProducts, _newProduct],
+          TotalItems: state.TotalItems + 1,
+          Total: state.Total + +_newProduct.product.price,
         };
       }
 
     case ShoppingCartActions.UPDATE_SHOPPING_CART_PRODUCT:
       const product = state.shoppingCartProducts[action.payload.index];
+      let _totalItems = state.TotalItems;
+      let _total = state.Total;
       let newQtt = product.qtt;
       if (action.payload.action === '+') {
         newQtt++;
+        _totalItems = _totalItems + 1;
+        _total = _total + +product.product.price;
       } else {
         newQtt--;
+        _totalItems = _totalItems - 1;
+        _total = _total - +product.product.price;
       }
 
       const updatedProduct: Product = {
         ...product,
         qtt: newQtt,
-        total: newQtt * product.product.price,
+        total: newQtt * +product.product.price,
       };
 
       const updatedProducts = [...state.shoppingCartProducts];
@@ -72,9 +84,16 @@ export function shoppingCartReducer(
       return {
         ...state,
         shoppingCartProducts: updatedProducts,
+        TotalItems: _totalItems,
+        Total: _total,
       };
 
     case ShoppingCartActions.DELETE_SHOPPING_CART_PRODUCT:
+      const deleteProduct = state.shoppingCartProducts.filter(
+        (product, index) => {
+          return index == action.payload;
+        }
+      );
       return {
         ...state,
         shoppingCartProducts: state.shoppingCartProducts.filter(
@@ -82,6 +101,8 @@ export function shoppingCartReducer(
             return index !== action.payload;
           }
         ),
+        TotalItems: state.TotalItems - deleteProduct[0].qtt,
+        Total: state.Total - deleteProduct[0].total,
       };
     default:
       return state;
