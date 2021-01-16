@@ -4,7 +4,7 @@
     <hr />
   </div>
   <div class="shopping_cart_body">
-    <div class="container" *ngIf="!smallLayout">
+    <div class="container">
       <table class="shopping_cart_table">
         <thead>
           <th>Item</th>
@@ -15,11 +15,13 @@
           <th></th>
         </thead>
         <tbody>
-          <!-- *ngFor="
-          let product of (products | async).shoppingCartProducts;
-          let i = index
-        " -->
-          <tr class="shopping_cart_table_row_item">
+          <tr
+            class="shopping_cart_table_row_item"
+            *ngFor="
+              let product of (products | async).shoppingCartProducts;
+              let i = index
+            "
+          >
             <td class="shopping_cart_table_col_img">
               <img
                 src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
@@ -28,66 +30,29 @@
             </td>
             <td class="shopping_cart_table_col_description">
               <div class="col_description">
-                <p>Product 1</p>
-                <p>REF: 12345</p>
+                <p>{{ product.product.name }}</p>
+                <p>REF: {{ product.product.id }}</p>
               </div>
             </td>
-            <td class="shopping_cart_table_col_price"><span>45 €</span></td>
+            <td class="shopping_cart_table_col_price">
+              <span>{{ product.product.price }} €</span>
+            </td>
             <td class="shopping_cart_table_col_qtt">
               <div class="col_qtt_actions">
-                <button>-</button>
-                <span>2</span>
-                <button>+</button>
+                <button (click)="removeItem(i, product)">-</button>
+                <span>{{ product.qtt }}</span>
+                <button (click)="addItem(i, product)">+</button>
               </div>
             </td>
-            <td class="shopping_cart_table_col_total">90€</td>
+            <td class="shopping_cart_table_col_total">{{ product.total }} €</td>
             <td>
               <div class="col_row_actions">
-                <span><i class="fa fa-trash"></i></span>
-              </div>
-            </td>
-          </tr>
-          <tr class="shopping_cart_table_row_item">
-            <td class="shopping_cart_table_col_img">
-              <img
-                src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
-                alt="[product.product.name]"
-              />
-            </td>
-            <td class="shopping_cart_table_col_description">
-              <div class="col_description">
-                <p>Product 1</p>
-                <p>REF: 12345</p>
-              </div>
-            </td>
-            <td class="shopping_cart_table_col_price"><span>45 €</span></td>
-            <td class="shopping_cart_table_col_qtt">
-              <div class="col_qtt_actions">
-                <button>-</button>
-                <span>2</span>
-                <button>+</button>
-              </div>
-            </td>
-            <td class="shopping_cart_table_col_total">90€</td>
-            <td>
-              <div class="col_row_actions">
-                <span><i class="fa fa-trash"></i></span>
+                <span (click)="deleteItem(i)"><i class="fa fa-trash"></i></span>
               </div>
             </td>
           </tr>
         </tbody>
       </table>
     </div>
-    <div class="container_smallLayout" *ngIf="smallLayout">
-      <app-product-list
-        *ngFor="
-          let product of (products | async).shoppingCartProducts;
-          let i = index
-        "
-        [product]="product"
-        [index]="i"
-      ></app-product-list>
-    </div>
   </div>
 </div>
-<!--  -->
