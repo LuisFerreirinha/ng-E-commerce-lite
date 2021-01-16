@@ -27,6 +27,14 @@
         </thead>
         <tbody>
           <tr
+            app-shopping-cart-product-row
+            *ngFor="
+              let product of (products | async).shoppingCartProducts;
+              let i = index
+            "
+            [product]="product"
+          ></tr>
+          <!-- <tr
             class="shopping_cart_table_row_item"
             *ngFor="
               let product of (products | async).shoppingCartProducts;
@@ -68,7 +76,7 @@
                 <span (click)="deleteItem(i)"><i class="fa fa-trash"></i></span>
               </div>
             </td>
-          </tr>
+          </tr> -->
         </tbody>
       </table>
     </div>
