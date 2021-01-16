@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
-import { Product } from 'src/app/Models/product';
+import * as shoppingCartActions from '../../_store/_actions/shopping-cart.actions';
 import * as fromShoppingCart from '../../_store/_reducers/shopping-cart.reducer';
 
 @Component({
@@ -15,9 +15,23 @@ export class HeaderComponent implements OnInit, OnDestroy {
   constructor(private store: Store<fromShoppingCart.AppState>) {}
 
   ngOnInit(): void {
+    this.loadSate();
+
     this.subscription = this.store.select('shoppingCart').subscribe((p) => {
       this.shoppingCartProducts = p.TotalItems;
     });
+  }
+
+  loadSate() {
+    const localSate: fromShoppingCart.State = JSON.parse(
+      localStorage.getItem('shoppingCart')
+    );
+
+    if (localSate) {
+      this.store.dispatch(
+        new shoppingCartActions.LoadShoppingCartProducts(localSate)
+      );
+    }
   }
 
   ngOnDestroy() {

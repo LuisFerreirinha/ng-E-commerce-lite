@@ -104,6 +104,12 @@ export function shoppingCartReducer(
         TotalItems: state.TotalItems - deleteProduct[0].qtt,
         Total: state.Total - deleteProduct[0].total,
       };
+
+    case ShoppingCartActions.LOAD_SHOPPING_CART_PRODUCTS:
+      return {
+        ...state,
+        ...action.payload,
+      };
     default:
       return state;
   }

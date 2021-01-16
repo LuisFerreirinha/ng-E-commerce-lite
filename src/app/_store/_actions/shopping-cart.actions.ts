@@ -1,6 +1,8 @@
 import { Action } from '@ngrx/store';
 import { Product } from 'src/app/Models/product';
+import { State } from '../_reducers/shopping-cart.reducer';
 
+export const LOAD_SHOPPING_CART_PRODUCTS = 'LOAD_SHOPPING_CART_PRODUCTS';
 export const ADD_SHOPPING_CART_PRODUCT = 'ADD_SHOPPING_CART_PRODUCT';
 export const UPDATE_SHOPPING_CART_PRODUCT = 'UPDATE_SHOPPING_CART_PRODUCT';
 export const DELETE_SHOPPING_CART_PRODUCT = 'DELETE_SHOPPING_CART_PRODUCT';
@@ -25,7 +27,14 @@ export class DeleteShoppingCartProduct implements Action {
   constructor(public payload: number) {}
 }
 
+export class LoadShoppingCartProducts implements Action {
+  readonly type = LOAD_SHOPPING_CART_PRODUCTS;
+
+  constructor(public payload: State) {}
+}
+
 export type ShoppingCartActions =
   | AddShoppingCartProduct
   | UpdateShoppingCartProduct
-  | DeleteShoppingCartProduct;
+  | DeleteShoppingCartProduct
+  | LoadShoppingCartProducts;
