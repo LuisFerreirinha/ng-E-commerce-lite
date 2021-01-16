@@ -30,3 +30,9 @@
   align-items: center;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
+
+@media screen and (max-width: 576px) {
+  .container {
+    padding: 0;
+  }
+}

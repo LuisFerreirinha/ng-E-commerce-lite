@@ -200,7 +200,7 @@ tr > td:first-child > img {
     grid-row-start: 2;
     justify-self: start;
     align-self: center;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     text-align: start;
   }
   .col_row_actions {
