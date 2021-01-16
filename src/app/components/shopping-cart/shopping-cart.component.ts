@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { Product } from '../Models/product';
-import * as fromShoppingCart from '../_store/_reducers/shopping-cart.reducer';
-import * as shoppingCartActions from '../_store/_actions/shopping-cart.actions';
+import { Product } from '../../Models/product';
+import * as fromShoppingCart from '../../_store/_reducers/shopping-cart.reducer';
 @Component({
   selector: 'app-shopping-cart',
   templateUrl: './shopping-cart.component.html',

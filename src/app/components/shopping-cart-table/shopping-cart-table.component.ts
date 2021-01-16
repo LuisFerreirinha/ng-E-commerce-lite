@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import * as fromShoppingCart from '../_store/_reducers/shopping-cart.reducer';
-import * as shoppingCartActions from '../_store/_actions/shopping-cart.actions';
-import { Product } from '../Models/product';
+import * as fromShoppingCart from '../../_store/_reducers/shopping-cart.reducer';
+import * as shoppingCartActions from '../../_store/_actions/shopping-cart.actions';
+import { Product } from '../../Models/product';
 import { Observable } from 'rxjs';
 
 @Component({
