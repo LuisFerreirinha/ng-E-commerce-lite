@@ -8,12 +8,19 @@ import { ProductsService } from 'src/app/_services/products.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  products: IProduct[];
+  error = false;
+  products: IProduct[] = [];
   constructor(private ProductsService: ProductsService) {}
 
   ngOnInit(): void {
-    this.ProductsService.fetchProducts().subscribe((products) => {
-      this.products = products;
-    });
+    this.ProductsService.fetchProducts().subscribe(
+      (products) => {
+        this.error = false;
+        this.products = products;
+      },
+      (error) => {
+        this.error = true;
+      }
+    );
   }
 }

@@ -4,23 +4,16 @@
     <hr />
   </div>
   <div class="home_body">
-    <div class="container">
+    <div *ngIf="error" class="home_body_empty">
+      <h1>It seems there is a problem.</h1>
+      <h2>Please try again later.</h2>
+      <img src="../../../assets/undraw_server_down_s4lk.png" alt="Empty cart" />
+    </div>
+    <div class="container" *ngIf="!error">
       <app-product-card
         *ngFor="let product of products; let i = index"
         [product]="product"
       ></app-product-card>
-      <!-- <app-product-card
-        [product]="{ name: 'Product 1', price: 125, id: 1, image: '' }"
-      ></app-product-card>
-      <app-product-card
-        [product]="{ name: 'Product 2', price: 45, id: 2, image: '' }"
-      ></app-product-card>
-      <app-product-card
-        [product]="{ name: 'Product 3', price: 23, id: 3, image: '' }"
-      ></app-product-card>
-      <app-product-card
-        [product]="{ name: 'Product 4', price: 56, id: 4, image: '' }"
-      ></app-product-card> -->
     </div>
   </div>
 </div>
