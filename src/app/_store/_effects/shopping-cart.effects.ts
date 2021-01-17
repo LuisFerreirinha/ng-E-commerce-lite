@@ -11,7 +11,8 @@ export class shoppingCartEffects {
     ofType(
       shoppingCartActions.ADD_SHOPPING_CART_PRODUCT,
       shoppingCartActions.UPDATE_SHOPPING_CART_PRODUCT,
-      shoppingCartActions.DELETE_SHOPPING_CART_PRODUCT
+      shoppingCartActions.DELETE_SHOPPING_CART_PRODUCT,
+      shoppingCartActions.CHECKOUT_SHOPPING_CART_PRODUCT
     ),
     withLatestFrom(this.store$.select('shoppingCart')),
     tap((data) => {

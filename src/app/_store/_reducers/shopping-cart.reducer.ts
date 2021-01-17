@@ -10,7 +10,7 @@ export interface AppState {
   shoppingCart: State;
 }
 
-const initialState: State = {
+export const initialState: State = {
   shoppingCartProducts: [],
   TotalItems: 0,
   Total: 0,
@@ -20,6 +20,7 @@ export function shoppingCartReducer(
   state: State = initialState,
   action: ShoppingCartActions.ShoppingCartActions
 ) {
+  Object.freeze(state);
   switch (action.type) {
     case ShoppingCartActions.ADD_SHOPPING_CART_PRODUCT:
       let _newProduct = action.payload;
