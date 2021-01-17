@@ -9,7 +9,6 @@ import { PopUpService } from './_services/pop-up.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit, OnDestroy {
-  title = 'ng-e-commerce-lite';
   popUpSubscription = new Subscription();
 
   popUps: IpopUp[] = [];
