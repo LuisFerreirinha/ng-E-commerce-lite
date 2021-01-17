@@ -3,7 +3,7 @@ import * as shoppingCartACtions from '../_actions/shopping-cart.actions';
 import { Product } from 'src/app/Models/product';
 
 describe('ShoppingCartReducer', () => {
-  describe('unknown actions', () => {
+  describe('checkout products', () => {
     it('should return the default state', () => {
       const { initialState } = fromShoppingCart;
       const action = new shoppingCartACtions.CheckoutShoppingCart();
@@ -193,7 +193,7 @@ describe('ShoppingCartReducer', () => {
     });
   });
 
-  describe('Delete product', () => {
+  describe('Load state', () => {
     it('should load a given state', () => {
       const initialState: fromShoppingCart.State = {
         shoppingCartProducts: [
