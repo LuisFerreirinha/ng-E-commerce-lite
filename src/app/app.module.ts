@@ -17,7 +17,6 @@ import { ProductCardComponent } from './components/product-card/product-card.com
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { shoppingCartReducer } from './_store/_reducers/shopping-cart.reducer';
 import { environment } from 'src/environments/environment';
-import { ShoppingCartProductRowComponent } from './components/shopping-cart-product-row/shopping-cart-product-row.component';
 import { ShoppingCartTableComponent } from './components/shopping-cart-table/shopping-cart-table.component';
 import { ShoppingCartSummaryComponent } from './components/shopping-cart-summary/shopping-cart-summary.component';
 import { shoppingCartEffects } from './_store/_effects/shopping-cart.effects';
@@ -36,7 +35,6 @@ const appRoutes: Routes = [
     PopUpComponent,
     ProductCardComponent,
     SpinnerComponent,
-    ShoppingCartProductRowComponent,
     ShoppingCartTableComponent,
     ShoppingCartSummaryComponent,
   ],
