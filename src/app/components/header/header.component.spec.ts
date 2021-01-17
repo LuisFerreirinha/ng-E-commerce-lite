@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { StoreModule } from '@ngrx/store';
+import * as fromShoppingCart from '../../_store/_reducers/shopping-cart.reducer';
 import { HeaderComponent } from './header.component';
 
 describe('HeaderComponent', () => {
@@ -8,9 +9,13 @@ describe('HeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HeaderComponent ]
-    })
-    .compileComponents();
+      declarations: [HeaderComponent],
+      imports: [
+        StoreModule.forRoot({
+          shoppingCart: fromShoppingCart.shoppingCartReducer,
+        }),
+      ],
+    }).compileComponents();
   });
 
   beforeEach(() => {

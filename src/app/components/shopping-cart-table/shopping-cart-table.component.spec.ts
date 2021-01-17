@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { StoreModule } from '@ngrx/store';
+import * as fromShoppingCart from '../../_store/_reducers/shopping-cart.reducer';
 import { ShoppingCartTableComponent } from './shopping-cart-table.component';
 
 describe('ShoppingCartTableComponent', () => {
@@ -8,9 +9,13 @@ describe('ShoppingCartTableComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ShoppingCartTableComponent ]
-    })
-    .compileComponents();
+      declarations: [ShoppingCartTableComponent],
+      imports: [
+        StoreModule.forRoot({
+          shoppingCart: fromShoppingCart.shoppingCartReducer,
+        }),
+      ],
+    }).compileComponents();
   });
 
   beforeEach(() => {
