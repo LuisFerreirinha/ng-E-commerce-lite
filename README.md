@@ -4,10 +4,10 @@ This app intends to represent an E-commerce application. The user can add mock i
 
 The state of this application (products on shopping cart and respective data) is mannaged by ngrx.
 
-When adding products to the shopping cart from the home page, if the respective product already exists, its count will be incremented and the subtotal updated as well.
-While on shopping cart page, the user can add or remove the quantity of each product and also remove not intend products.
+When adding products to the shopping cart from the home page, if the respective product already exists, the count will be incremented, and the subtotal updated as well.
+While on shopping cart page, the user can add or remove the quantity of each product and remove not intend products.
 
-The state of the ngrx is also on the local storage of the broweser in order to fill the sate whenever the user refreshes the page.
+The state of the ngrx is also on the local storage of the browser in order to fill the sate whenever the user refreshes the page.
 
 Due to the size of the application, SSR was not included, but it is definitely something worthy to look at in in the future since server rendering offers great advantages, like pre-rendering our app on the fly which will help users on low networks, as well improving SEO crawlers to index our app.
 
