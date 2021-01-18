@@ -9,6 +9,7 @@
       [src]="product.photo"
       [alt]="product.name"
       (load)="loadingImg = false"
+      onerror="this.src='../../assets/undraw_signal_searching_bhpc.png'"
     />
   </div>
   <div class="card_body">

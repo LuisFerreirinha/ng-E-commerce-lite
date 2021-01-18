@@ -33,6 +33,7 @@
           [src]="product.product.photo"
           [alt]="[product.product.name]"
           (load)="loadingImg = false"
+          onerror="this.src='../../assets/undraw_signal_searching_bhpc.png'"
         />
       </td>
       <td class="shopping_cart_table_col_description">
