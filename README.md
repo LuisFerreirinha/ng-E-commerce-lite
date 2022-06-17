@@ -15,7 +15,6 @@ Regarding future work, some reducers can be improved by using @Effects for insta
 
 The default tests created along with the compoents were adjusted by importing the necessary modules and are OK.
 I've also included test for the reducer and they are OK as well.
-In fact, creating the tests was the most difficult part of this project since I'm not as familiar whith those as I am with Angular itself. It's somthing to be improved.
 
 # NgECommerceLite
 
